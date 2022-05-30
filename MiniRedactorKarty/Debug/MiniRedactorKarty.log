@@ -1,0 +1,5 @@
+﻿  Source.cpp
+C:\1Prog\Pra\c++\MiniRedactorKarty\Source.cpp(48,19): warning C4018: <: несоответствие типов со знаком и без знака
+C:\1Prog\Pra\c++\MiniRedactorKarty\Source.cpp(194,9): warning C4101: rectas: неиспользованная локальная переменная
+C:\1Prog\Pra\c++\MiniRedactorKarty\Source.cpp(246,9): warning C4101: rectt: неиспользованная локальная переменная
+  MiniRedactorKarty.vcxproj -> C:\1Prog\Pra\c++\MiniRedactorKarty\Debug\MiniRedactorKarty.exe

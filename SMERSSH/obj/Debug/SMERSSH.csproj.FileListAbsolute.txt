@@ -1,0 +1,9 @@
+C:\1Prog\Pra\c#\SMERSSH\bin\Debug\SMERSSH.exe.config
+C:\1Prog\Pra\c#\SMERSSH\bin\Debug\SMERSSH.exe
+C:\1Prog\Pra\c#\SMERSSH\bin\Debug\SMERSSH.pdb
+C:\1Prog\Pra\c#\SMERSSH\obj\Debug\SMERSSH.csprojAssemblyReference.cache
+C:\1Prog\Pra\c#\SMERSSH\obj\Debug\SMERSSH.Properties.Resources.resources
+C:\1Prog\Pra\c#\SMERSSH\obj\Debug\SMERSSH.csproj.GenerateResource.cache
+C:\1Prog\Pra\c#\SMERSSH\obj\Debug\SMERSSH.exe
+C:\1Prog\Pra\c#\SMERSSH\obj\Debug\SMERSSH.pdb
+C:\1Prog\Pra\c#\SMERSSH\obj\Debug\SMERSSH.Form1.resources

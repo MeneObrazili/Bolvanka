@@ -28,38 +28,41 @@ namespace SMERSSH {
             File.Read(aFulovayaHueta, 0, (int)File.Length);
             File.Close();
 
-            Form1.PSizeMap = new Point(0, 1);
+            formOchka.PSizeMap = new Point(0, 1);
             if (aFulovayaHueta[0] != 'A' && aFulovayaHueta[1] != 'U' && aFulovayaHueta[2] != 'E')
                 return;
             int x = (((int)aFulovayaHueta[7] << 24) + ((int)aFulovayaHueta[6] << 16) + ((int)aFulovayaHueta[5] << 8) + ((int)aFulovayaHueta[4]));
             int y = (((int)aFulovayaHueta[0x0B] << 24) + ((int)aFulovayaHueta[0x0A] << 16) + ((int)aFulovayaHueta[9] << 8) + ((int)aFulovayaHueta[8]));
-            Form1.PSizeMap = new Point(x, y);
+            formOchka.PSizeMap = new Point(x, y);
             int pointer = (((int)aFulovayaHueta[0x0F] << 24) + ((int)aFulovayaHueta[0x0E] << 16) + ((int)aFulovayaHueta[0x0D] << 8) + ((int)aFulovayaHueta[0x0C]));
 
-            for (int i1 = 0; i1 < Form1.PSizeMap.Y; i1++) {
-                Form1.mainmap.kvadratyi.Add(new List<tayl>());
-                Form1.kartinki.Add(new List<PictureBox>());
-                for (int i2 = 0; i2 < Form1.PSizeMap.X; i2++) {
-                    Form1.mainmap.kvadratyi[i1].Add(new tayl(0xffffffff, (TipTayla)aFulovayaHueta[i1 * Form1.PSizeMap.X + i2 + 16]));
-                    Form1.kartinki[i1].Add(I1.InitPicture(bomji[aFulovayaHueta[i1 * Form1.PSizeMap.X + i2 + 16]], new Point(i2 * Form1.PKartSize.X, i1 * Form1.PKartSize.Y), new Size(Form1.PKartSize.X, Form1.PKartSize.Y)));
-                    formOchka.Controls.Add(Form1.kartinki[i1][i2]);
+            for (int i1 = 0; i1 < formOchka.PSizeMap.Y; i1++) {
+                formOchka.Cmainmap.kvadratyi.Add(new List<tayl>());
+                formOchka.PBMatrPict.Add(new List<PictureBox>());
+                for (int i2 = 0; i2 < formOchka.PSizeMap.X; i2++) {
+                    formOchka.Cmainmap.kvadratyi[i1].Add(new tayl(0xffffffff, (TipTayla)aFulovayaHueta[i1 * formOchka.PSizeMap.X + i2 + 16]));
+                    formOchka.PBMatrPict[i1].Add(I1.InitPicture(bomji[aFulovayaHueta[i1 * formOchka.PSizeMap.X + i2 + 16]], new Point(i2 * formOchka.PKartSize.X, i1 * formOchka.PKartSize.Y), new Size(formOchka.PKartSize.X, formOchka.PKartSize.Y)));
+                    formOchka.Controls.Add(formOchka.PBMatrPict[i1][i2]);
+                    
                 }
             }
 
             return;
         }
 
-        unsafe static public void ZadelkaVisuala() {
-            for (int i1 = 0; i1 < Form1.PSizeMap.X; i1++) {
-                for (int i2 = 0; i2 < Form1.PSizeMap.Y; i2++) {
-                    Form1.kartinki[i2][i1].Visible = true;
+
+
+        unsafe static public void ZadelkaVisuala(Form1 formOchka) {
+            for (int i1 = 0; i1 < formOchka.PSizeMap.X; i1++) {
+                for (int i2 = 0; i2 < formOchka.PSizeMap.Y; i2++) {
+                    formOchka.PBMatrPict[i2][i1].Visible = true;
                 }
             }
 
-            for (int i = 0; i < Form1.boysyi.Count; i++) {
-                if (Form1.boysyi[i].bViden) {
-                    Form1.boysyi[i].IPikcha.Visible = true;
-                    Form1.kartinki[Form1.boysyi[i].PMesto.Y][Form1.boysyi[i].PMesto.X].Visible = false;
+            for (int i = 0; i < formOchka.boysyi.Count; i++) {
+                if (formOchka.boysyi[i].bViden) {
+                    formOchka.boysyi[i].IPikcha.Visible = true;
+                    formOchka.PBMatrPict[formOchka.boysyi[i].PMesto.Y][formOchka.boysyi[i].PMesto.X].Visible = false;
                 }
             }
         }
